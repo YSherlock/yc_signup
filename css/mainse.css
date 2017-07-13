@@ -1,0 +1,122 @@
+         
+          body {
+          overflow-x:hidden;
+          width:100%;
+          margin-left: -55px;
+          }
+          
+            .banner{
+                    width: 360px;
+                    margin: 0 15%;
+            }
+            
+           .banner-bottom{
+                margin-left: 15%;
+                width: 360px;
+            }
+
+          p {
+               margin: 7px 16px 20px;
+               font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+            }
+
+          h3,h4,h5{
+            margin:0 28%;
+            color:rgb(178,178,242);
+          }
+
+          h4{
+            margin: 0 28% 10px;
+          }
+
+          h2{
+            font-size: 23px;
+            margin:0 28%;
+            color:rgb(178,178,242);
+          }
+
+          .test-center span{
+
+          }
+
+          .animated h3{
+            margin: 36px 25% 20px;
+          }
+          
+          .dowebok span{
+            margin: 36px 11% 20px;
+          }
+
+          .dowebok p{
+            margin: 7px 22px;
+             font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+            }
+          
+
+          .center{
+            padding: 0 20%;
+          }
+
+          .header{
+            margin-top:50px;
+            margin-left:2%;
+            width:290px;
+          }
+
+          .header h3{
+            margin:0 24%;
+          }
+
+          .header p{
+            margin:18px 16px 20px;
+          }
+
+          .img-responsive{
+              margin-left:0;
+          }
+
+          .banner-bottom-grid-right h5{
+            margin: 16px 35% !important;
+            font-size: 19px;
+            
+          }
+
+         .icon-style{
+              margin: 10px 115px;
+
+         }
+
+         .meta-text{
+          width:290px;
+         }
+
+         .meta-text h3{
+          margin:0 32%;
+         }
+
+         .details{
+          display:none;
+         }
+
+         .logo img{
+          display: none;
+         }
+
+         .code{
+            display:block;
+            width:60px;
+            height:60px;
+            margin: 0 50%;
+         }
+          
+        .dowebok h3{
+          margin: 36px 36% 20px;
+        }
+
+        .banner-b-left1{
+            margin:10px auto;
+        }
+
+        .footer-bottom{
+            margin-left: 80px;
+        }

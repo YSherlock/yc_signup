@@ -1,0 +1,576 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="HandheldFriendly" content="true">
+        <title>动态报名表</title>   
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet"  type="text/css" href="css/main.css" media = "screen and (min-width: 980px)">
+        <link rel="stylesheet"  type="text/css" href="css/mainse.css" media = "screen and (max-width: 720px)">
+
+        <link rel="stylesheet" href="css/animate.min.css">      
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+	
+  <style>
+
+        .radio{font-size:14px;}
+        .radio input{ display:block; float:left;}
+        .radio span{ display:block; float:left; *padding-top:5px;}
+
+
+        .banner{
+        background: url(images/bg.jpg) no-repeat 0px 0px;
+        background-size: cover;
+        -webkit-background-size:cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        -ms-background-size: cover;    }
+
+        .dowebok {
+        animate-duration: 3s;    
+        animate-delay: 6s;    
+        animate-iteration-count: 2;    
+}
+
+        select{
+         color: #555;
+        }
+
+        .form-control{
+          resize: none;
+        }
+
+
+
+
+        
+    </style>
+	
+    <body>
+
+    <div id="wrap">
+    <div id="main" class="clearfix">
+    
+
+	<div class="banner">
+	<div class="container">
+
+		<div class="row"><div class="col-md-12"></div></div>
+		
+        <form class="form-horizontal dowebok" role="form" id="ajaxForm">
+        <div class="form-group">
+				<label class="col-md-12"></label>
+				<label class="col-md-12"></label>
+				<label class="col-md-12"></label>
+				<label class="col-md-12"></label>
+
+
+			</div>
+
+       	<div class="form-group">
+		<label class="col-md-7"></label>
+		<div class="col-md-5 panel panel-primary">
+    	<div class="panel-body">
+
+							
+			<div class="form-group">
+				<label class="col-md-1"></label>
+				<div class="col-md-10">
+				<input type="text" class="form-control" name="username" id="username" placeholder="姓名"    required>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-md-1"></label>
+				<div class="col-md-10">
+				<input type="text" class="form-control" name="school" id="school" placeholder="学院"   required>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-md-1"></label>
+				<div class="col-md-10">
+				<input type="text" class="form-control" name="studentid" placeholder="学号" id="studentid" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " required>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-md-1"></label>
+				<div class="col-md-10">
+				<input type="text" class="form-control" name="perfession_class" placeholder="专业班级（如：15信息工程*班）" id="perfession_class"   required>
+				</div>
+			</div>
+			
+			
+			
+			<div class="form-group">
+				<label class="col-md-1"></label>
+				<div class="col-md-10">
+				<input type="text" class="form-control" name="qq" placeholder="qq" id="qq" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " required>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-md-1"></label>
+				<div class="col-md-10">
+				<input type="text" class="form-control" name="telephone" placeholder="联系方式" id="telephone" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " required>
+				</div>
+			</div>
+			
+      <div class="form-group">
+        <label class="col-md-1"></label>
+        <div class="col-md-10">
+        <select class="form-control" name="major" id="major"> 
+          <option value="飞控组">飞控组</option> 
+          <option value="机器人组">机器人组</option> 
+          <option value="嵌入式组">嵌入式组</option> 
+          <option value="图像处理组">图像处理组</option> 
+          <option value="硬件组">硬件组</option> 
+          <option value="APP组">APP组</option> 
+          <option value="网页组">网页组</option> 
+          <option value="专利组">专利组</option> 
+      </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+      <label class="col-md-1"></label>
+      <div class="col-md-10">
+       <textarea class="form-control" rows="3" name="self_introduction" placeholder="自我介绍" id="self_introduction"  maxlength="100"  required></textarea>
+      </div>
+      </div>
+      
+
+      <div class="form-group">
+      <label class="col-md-1"></label>
+      <div class="col-md-10">
+       <textarea class="form-control" rows="3" name="skill" placeholder="目前掌握技能" id="skill"  maxlength="100"  required></textarea>
+      </div>
+      </div>
+
+      <div class="form-group">
+      <label class="col-md-1"></label>
+      <div class="col-md-10">
+       <textarea class="form-control" rows="3" name="experience" placeholder="项目经验" id="experience"  maxlength="100" 
+        required></textarea>
+      </div>
+      </div>
+
+      <div class="form-group">
+      <label class="col-md-1"></label>
+      <div class="col-md-10">
+       <textarea class="form-control" rows="3" name="honor" placeholder="获奖情况" id="honor"  maxlength="100"  required></textarea>
+      </div>
+      </div>
+
+      <div class="form-group">
+      <label class="col-md-1"></label>
+      <div class="col-md-10">
+      <div class="checkbox">
+      <span style="line-height:31px">是否服从调剂：</span>
+      <label><input type="checkbox" name="obey" id="obey" value="1">是</label>
+      </div>
+      </div>
+      </div>
+			
+
+			
+			<div class="form-group">
+				<label class="col-md-1"></label>
+				<div class="col-md-10">
+				<button name="submit" id="submit" class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
+				</div>
+			</div>
+
+
+
+		</div>
+		</div>
+
+
+
+		</div>	
+		</form>
+
+		</div>
+		</div>
+
+		<br/>
+
+
+        <a href="javascript:;" id="btn" title="回到顶部"></a>
+
+		<div class="banner-bottom animated rotateIn">
+			<h3><span><img src="images/logo.png"></span>欢迎光临!</h3>
+			<p class="intr">
+			YC勇创团队的前身是苏老师带领的无人机科研小组，该小组在苏老师的指导下获得了“挑战杯”全国一等奖一项，
+			二等奖一项和三等奖一项，以及全国大学生电子竞赛一等奖，二等奖各一项，正是由于取得了巨大的成就，苏
+			老师应学校邀请，正式成立YC勇创团队，并与电子协会和智能模型协会保持合作关系
+			</p>
+			<h4><span><img src="images/logo.png"></span>团队介绍</h4>
+
+			<div class="banner-bottom-grid">
+				<div class="col-md-6 banner-bottom-grid-left dowebok ">
+					<img src="images/1350.jpg" alt=" " class="img-responsive">
+				</div>
+				<div class="col-md-6 banner-bottom-grid-right">
+					<h5>成员成果</h5>
+					<p>多用户多平台无线智能投影系统、基于WIFI的无线监控系统、智能手机对家电的无线控制
+					机器视觉在室内定位的研究与应用、新型电源技术--数字变换器、LED驱动和开关电源、LED照明
+					一次二次配光设计、多旋翼无人机	
+					</p>
+					<div class="banner-b-left" >
+						<div class="banner-b-left1">
+							<img src="images/1.jpg" alt=" " class="img-responsive">
+						</div>
+						<div class="banner-b-left1">
+							<img src="images/2.jpg" alt=" " class="img-responsive">
+						</div>
+						<div class="banner-b-left1">
+							<img src="images/9.png" alt=" " class="img-responsive">
+						</div>
+						
+						<div class="clearfix"> </div>
+					</div>
+					<div class="banner-b-left  animated fadeIn">
+						<div class="banner-b-left1">
+							<img src="images/3.jpg" alt=" " class="img-responsive">
+						</div>
+						<div class="banner-b-left1">
+							<img src="images/6.jpg" alt=" " class="img-responsive">
+						</div>
+						<div class="banner-b-left1">
+							<img src="images/7.png" alt=" " class="img-responsive">
+						</div>
+						
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+			</div>
+
+
+
+            
+      <div class="features section-padding reda">
+        <div class="container" style="width: 1170px;">
+
+          <div class="header">
+            <h3><span><img src="images/logo.png"></span>小组介绍</h3>
+           <p>“为有能力的人提供平台”“为有贡献的人报以回馈”</p>
+            <!-- end .container> .header -->
+
+          <div class="row">
+            <div class="col-md-12 feature-list">
+              <div class="row">
+
+                <div class="col-sm-6 col-md-6">
+                  <div class="featured-item">
+                    <div class="icon">
+                      <div class="icon-style"><img src="images/飞机.png"></div>
+                    </div> <!-- end icon -->
+                    <div class="meta-text">
+                      <h3>飞控组</h3>
+                      <p>有C&C++，数据结构，算法基础，有丰富比赛经验，熟悉stm32</p>
+                    </div> <!-- end .meta-text -->
+                  </div> <!-- end .featured-item -->
+                </div> <!-- end .feature-list> .row > .col-md-6 (1st item) -->
+
+                <div class="col-sm-6 col-md-6">
+                  <div class="featured-item">
+                    <div class="icon">
+                      <div class="icon-style"><img src="images/机器人.png"></div>
+                    </div> <!-- end icon -->
+                    <div class="meta-text">
+                      <h3>机器人组</h3>
+                      <p>有C&C++基础，熟悉Linux和Ros系统</p>
+                    </div> <!-- end .meta-text -->
+                  </div> <!-- end .featured-item -->
+                </div> <!-- end .feature-list> .row > .col-md-6 (2nd item) -->
+
+                <div class="col-sm-6 col-md-6">
+                  <div class="featured-item">
+                    <div class="icon">
+                      <div class="icon-style"><img src="images/嵌入式软件.png"></div>
+                    </div> <!-- end icon -->
+                    <div class="meta-text">
+                      <h3>嵌入式组</h3>
+                      <p>有项目/比赛经验，具备C/C++基础，掌握Linux应用层开发</p>
+                    </div> <!-- end .meta-text -->
+                  </div> <!-- end .featured-item -->
+                </div> <!-- end .feature-list> .row > .col-md-6 (3rd item) -->
+
+                <div class="col-sm-6 col-md-6">
+                  <div class="featured-item">
+                    <div class="icon">
+                      <div class="icon-style"><img src="images/ps.png"></div>
+                    </div> <!-- end icon -->
+                    <div class="meta-text">
+                      <h3>图像处理组</h3>
+                      <p>熟悉C/C++,python中至少一种，有扎实的数学基础，图像处理基础</p>
+                    </div> <!-- end .meta-text -->
+                  </div> <!-- end .featured-item -->
+                </div> <!-- end .feature-list> .row > .col-md-6 (4th item) -->
+
+                <div class="col-sm-6 col-md-6">
+                  <div class="featured-item">
+                    <div class="icon">
+                      <div class="icon-style"><img src="images/智能硬件.png"></div>
+                    </div> <!-- end icon -->
+                    <div class="meta-text">
+                      <h3>硬件组</h3>
+                      <p>扎实的数，模电基础，有较强的电路分析能力，具备开关电源知识</p>
+                    </div> <!-- end .meta-text -->
+                  </div> <!-- end .featured-item -->
+                </div> <!-- end .feature-list> .row > .col-md-6 (5th item) -->
+
+                <div class="col-sm-6 col-md-6">
+                  <div class="featured-item">
+                    <div class="icon">
+                      <div class="icon-style"><img src="images/APP.png"></div>
+                    </div> <!-- end icon -->
+                    <div class="meta-text">
+                      <h3>APP组</h3>
+                      <p>具有C语言基础，具有Java基础和安卓实践经验</p>
+                    </div> <!-- end .meta-text -->
+                  </div> <!-- end .featured-item -->
+                </div> <!-- end .feature-list> .row > .col-md-6 (6th item) -->
+
+                <div class="col-sm-6 col-md-6">
+                  <div class="featured-item">
+                    <div class="icon">
+                      <div class="icon-style"><img src="images/网页版.png"></div>
+                    </div> <!-- end icon -->
+                    <div class="meta-text">
+                      <h3>网页组</h3>
+                      <p>有ps设计软件基础，熟悉HTML/CSS/Javascript等语言，了解Php或java</p>
+                    </div> <!-- end .meta-text -->
+                  </div> <!-- end .featured-item -->
+                </div> <!-- end .feature-list> .row > .col-md-6 (5th item) -->
+
+                <div class="col-sm-6 col-md-6">
+                  <div class="featured-item">
+                    <div class="icon">
+                      <div class="icon-style"><img src="images/文书.png"></div>
+                    </div> <!-- end icon -->
+                    <div class="meta-text">
+                      <h3>专利组</h3>
+                      <p>对法律有兴趣，能读懂技术文章，沟通能力好</p>
+                    </div> <!-- end .meta-text -->
+                  </div> <!-- end .featured-item -->
+                </div> <!-- end .feature-list> .row > .col-md-6 (5th item) -->
+
+              </div> <!-- end .feature-list> .row -->
+            </div> <!-- end .feature-list -->
+          </div> <!-- end .container> .row -->
+
+        </div> <!-- end .container -->
+      </div> <!-- end .features -->
+    </div>
+
+
+
+
+
+			<br/>
+
+
+            <div id="about" class="about">
+            <div class="container">
+                <!-- head-section -->
+                <div class="head-section text-center">
+                    <span> </span>
+                    <h2><span><img src="images/logo.png"></span>导师介绍</h2>
+                    
+                </div>
+                <!-- head-section -->
+                <!-- about-grids -->
+                <div class="about-grids">
+                    <div class="col-md-6 about-left-grid dowebok">
+                        <h3>苏成悦</h3>
+                        <span>博士，广东工业大学物理学教授</span>
+                        <p>在应用物理（应用光学、应用电子）等领域进行科研和教学工作，参加国家自 然科学基金课题 3 项，省级 1 项，主持市级项目 1 项，主持和参与企业项目 6 项。 专利 5 项，发明专利申请 1 项。分别在国内外权威刊物发表论文 20 多篇，被国际权 威索引 SCI收录近 10 篇；</p>
+                        <p class="p-text">目前主要开展 LED 灯具光学系统优化设计、LED 驱动设计和智能控制、风光
+                                            互补太阳能系统、智能电动玩具、望远镜光学系统设计和智能家居等应用电子和应 用光学方面的研究和科技开发工作。有较丰富的 LED 灯具一次二次光学设计、LED
+                                            驱动、智能控制、智能玩具等应用项目开发经验，取得了一定的应用成果。</p>
+                    </div>
+                    <div class="col-md-6 about-right-grid">
+                        <div class="col-md-4"></div>
+                        <div class="center"><img src="images/tr.jpg" title="teacher">
+                    <div class="clearfix"> </div>
+                </div>
+                <!-- about-grids -->
+            </div>
+            <div class="clearfix"> </div>
+            </div>
+
+			
+
+			<div class="container second">
+			<h3><span><img src="images/logo.png"></span>加入我们</h3>
+			<p class="intr">要是你对学习技术有一定的热情，同时又符合我们的要求，请填写上面的报名表，快快加入我们吧！</p>
+			<div class="contact-us1-bottom">
+		
+			
+			<div class="logo">
+			<img src="images/logo.jpg" style="float:right">
+			</div>
+			</div>
+			</div>
+
+		</div>
+        </div>
+         </div>
+
+         </div>
+        </div>
+
+
+        <footer id="footer">
+            <div class="container">
+    
+            <div class="col-md-4 details">
+                <div class="icon">
+                    <img src="images/iQq.png" style="position:relative;">
+                </div>
+                <div class="qq" >招新Q群：</div>
+                <div class="qq"  style="height:80px"><img src="images/code.png" style="position:absolute;left:145px;"></div>
+            </div>
+
+            <div class="col-md-4 details" style="display=block">
+            <div class="icon">
+                    <img src="images/iAddress.png">
+                </div>
+                <div class="address">工作室：</div>
+                <div class="address">教六创客</div>
+            </div>
+
+
+            <div class="col-md-4 details" style="display=block">
+                <div class="icon">
+                    <img src="images/iPhone.png">
+                </div>
+                <div class="phone">联系电话:</div>
+                <div class="phone">13711019128</div>
+            </div>
+            
+            <div class="col-md-4 details" style="display:none">
+                    <img src="images/code.png">
+            </div>
+
+            <div class="row footer-bottom">
+            <ul class="list-inline text-center">
+                <li>Copyright &copy;2017. 勇创团队 Software All Rights Reserved.</li>
+            </ul>
+        </div>
+            </div>
+        </footer> 
+       
+		
+        
+        <!-- 如果要使用Bootstrap的js插件，必须先调入jQuery -->
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->
+        <script src="js/bootstrap.min.js"></script>
+
+
+		 <script>
+
+  document.getElementById("submit").onclick = function() {
+
+  var i=0;
+　　　　$("input").each(function(){  
+　　　　　　var vl=$(this).val();
+　　　　　　if(vl==""){
+　　　　　　　　i=1;
+　　　　　　}
+　　　　});
+
+　　　　if (i==1) { 
+　　　　　　alert('请将信息填写完整');
+　　　　　　return false;
+　　　　}
+
+
+
+      
+
+  function ifobey(){
+  if($("#obey").is(":checked"))
+  {        return 1; }
+  else{       return 0;
+  }
+}
+
+  var e = ifobey();
+  if(e){
+    document.getElementById("obey").value=1;
+  }
+  else{
+    document.getElementById("obey").value=0;
+  }
+
+  var request = new XMLHttpRequest();
+  request.open("POST", "../api/signup.php");
+  var data = "username=" + document.getElementById("username").value 
+                    + "&school=" + document.getElementById("school").value 
+                    + "&studentid=" + document.getElementById("studentid").value 
+                    + "&perfession_class=" + document.getElementById("perfession_class").value
+                    + "&qq=" + document.getElementById("qq").value 
+                    + "&telephone=" + document.getElementById("telephone").value 
+                     + "&major=" + document.getElementById("major").value 
+                     + "&self_introduction=" + document.getElementById("self_introduction").value 
+                      + "&skill=" + document.getElementById("skill").value 
+                      + "&experience=" + document.getElementById("experience").value 
+                       + "&honor=" + document.getElementById("honor").value 
+                       + "&obey=" + document.getElementById("obey").value  ;
+  request.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+  console.log(data);
+  request.send(data);
+  document.getElementById("ajaxForm").reset();
+  request.onreadystatechange = function() {
+    if (request.readyState===4) {
+      if (request.status===200) { 
+        var datas = request.response;
+        var index = datas.indexOf("{",0);
+        datas = datas.substring(index);
+        console.log(datas)
+        // data = JSON.parse(data);
+        datas = eval('('+datas+')');
+        console.log(datas)
+        if (datas.response) { 
+          alert(datas.message);
+        } else {
+          alert("出现错误");
+        }
+      } else {
+        alert("报名失败" );
+      }
+    } 
+  }
+}
+
+		</script> 
+        <script src="js/top.js"></script>
+        <script>
+        $(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+		</script>
+  <script>
+        $('form').addClass('animated fadeIn');
+        $('.banner-b-left').addClass('animated fadeIn');
+        $('.about-left-grid').addClass('animated fadeIn');
+        setTimeout(function(){$('.about-left-grid').removeClass('fadeIn');},5000);
+        $('.banner-bottom-grid-left').addClass('animated rotateIn');
+        $('footer').addClass('animated fadeIn');
+       
+  </script>
+    </body>
+</html>
